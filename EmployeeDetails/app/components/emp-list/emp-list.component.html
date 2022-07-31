@@ -1,0 +1,92 @@
+<h2>Employee Details</h2>
+            <table border="1">
+                <tr>
+                    <th>EmpNo</th>
+                    <th>EmpName</th>
+                    <th>Job</th>
+                    <th>HireDate</th>
+                    <th>Managerid</th>
+                    <th>Salary</th> 
+                    <th>Commission</th>
+                    <th>DeptNo</th>
+                </tr>
+                <tr *ngFor="let temp of  employees">
+                    <td>{{temp.empno}}</td>
+                    <td>{{temp.ename}}</td>
+                    <td>{{temp.job}}</td>
+                    <td>{{temp.hireDate}}</td>
+                    <td>{{temp.managerId}}</td>
+                    <td>{{temp.salary}}</td>
+                    <td>{{temp.commission}}</td>
+                    <td>{{temp.deptNo}}</td>
+                </tr>
+            </table>
+                <!--table border="1">
+                    <th>DeptNo</th>
+                    <th>DeptName</th>
+                    <th>Location</th>
+                <tr *ngFor="let temp1 of  departments">
+                    <td>{{temp1.deptNo}}</td>
+                    <td>{{temp1.deptName}}</td>
+                    <td>{{temp1.loc}}</td>
+                </tr>
+            </table> -->
+        &nbsp;
+        <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+            <div class="form-control">
+                <label>EmpNo</label>
+                <input type="number" name="empno" ngModel/>
+            </div>
+            <div class="form-control">
+                <label>EmpName</label>
+                <input type="text" name="ename" ngModel/>
+            </div>
+            <div class="form-control">
+                <label>Job</label>
+                <input type="text" name="job"  ngModel/>
+            </div>
+            <div class="form-control">
+                <label>HireDate</label>
+                <input type="text" name="hireDate" ngModel/>
+            </div>
+            <div class="form-control">
+                <label>ManagerId</label>
+                <input type="number" name="managerId" ngModel/>
+            </div>
+            <div class="form-control">
+                <label>Salary</label>
+                <input type="number" name="salary" ngModel/>
+            </div>
+            <div class="form-control">
+                <label>Commission</label>
+                <input type="number" name="commission" ngModel/>
+            </div>
+            <div class="form-control">
+                <label>DeptNo</label>
+                <input type="number" name="deptNo" ngModel/>
+            </div>
+            <div class="form-control">
+                <label>DeptName</label>
+                <input type="text" name="deptName" ngModel/>
+            </div>
+            <div class="form-control">
+                <label>Location</label>
+                <input type="text" name="loc" ngModel/>
+            </div>
+            <button type="submit" >Submit</button>
+        </form>
+        &nbsp;
+        
+    <form #DeptartmentSelect = "ngForm" (ngSubmit) = "onSubmit(DeptartmentSelect)">
+        <div class="row">
+            <div class = "col-sm-3">
+                <h2>Departments</h2>
+            </div>
+            <div class = "col-sm-3">
+                <select class = "form-select">
+                    <option selected>Select Here</option>    
+                    <option *ngFor = "let dept of departments" value = "{{dept.deptNo}}"> {{dept.deptName}}</option>
+                    </select>
+            </div>
+        </div>
+    </form>

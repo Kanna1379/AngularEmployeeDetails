@@ -1,0 +1,30 @@
+<h2>Department Details</h2>
+<table border="1">
+    <tr>
+        <th>DeptNo</th>
+        <th>DeptName</th>
+        <th>Location</th>
+    </tr>
+    <tr *ngFor="let temp of  departments">
+        <td>{{temp.deptNo}}</td>
+        <td>{{temp.deptName}}</td>
+        <td>{{temp.loc}}</td>
+    </tr>
+</table>
+&nbsp;
+<form #deptForm="ngForm" (ngSubmit)="onSubmit(deptForm)">
+    <div class="form-control">
+        <label>DeptNo</label>
+        <input type="number" name="deptNo" ngModel/>
+    </div>
+    <div class="form-control">
+        <label>DeptName</label>
+        <input type="text" name="deptName" ngModel/>
+    </div>
+    <div class="form-control">
+        <label>Location</label>
+        <input type="text" name="loc" ngModel/>
+    </div>
+    <button type="submit" >Submit</button>
+</form>
+
